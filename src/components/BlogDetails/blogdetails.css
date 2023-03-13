@@ -1,0 +1,20 @@
+.blogDetails{
+    background-color: #fff;
+    padding: 30px; 
+}
+.blogDetails .info .date{
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.583;
+    text-transform: uppercase;
+    transition: color .3s ease-in;
+}
+.blogDetails .info .title{
+    font-size: 24px;
+    margin-top: 10px;
+    transition: color .3s ease-in;
+}
+.blogDetails .info .date:hover, .blogDetails .info .title:hover{
+    color: var(--primary-color);
+}
