@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './posts.css'
 
 const Posts = ({ posts,query }) => {
-    const [postSearch, setPostSearch] = useState(posts)
     return (
         <>
             {

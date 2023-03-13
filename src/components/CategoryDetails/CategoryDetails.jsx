@@ -7,12 +7,12 @@ const CategoryDetails = () => {
     const [catProduct, setCatProduct] = useState()
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/category/${catname}`)
-            .then(res => res.json())
-            .then(data => setCatProduct(data))
+     const getCategory = async () => {
+        const response = await fetch(`https://fakestoreapi.com/products/category/${catname}`);
+        setCatProduct(response.json())
+     }
+     getCategory()
     }, [catname])
-
-    console.log(catProduct);
     return (
         <div>
            <div className="container">

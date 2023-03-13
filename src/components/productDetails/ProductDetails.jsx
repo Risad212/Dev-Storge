@@ -10,9 +10,12 @@ const ProductDetails = () => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res => res.json())
-            .then(data => setProduct(data))
+      const getProduct = async () => {
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`)
+        const data = await response.json()
+        setProduct(data)
+      }
+      getProduct()
     }, [id])
     const addToCart = () => {
         if (cartCount) {

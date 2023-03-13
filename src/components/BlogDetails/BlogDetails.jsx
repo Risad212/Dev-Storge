@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './blogdetails.css';
-import BlogSidebar from '../BlogSIdebar/BlogSidebar'
+
 const BlogDetails = () => {
     const [targetBlog, setTargetBlog] = useState()
     const { title } = useParams()

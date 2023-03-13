@@ -22,10 +22,10 @@ const Footer = () => {
                             <h3>Useful Links</h3>
                              <ul>
                                 <li><Link to='/'>Home</Link></li>
-                                <li><Link to='/'>Shop</Link></li>
-                                <li><Link to='/'>Cart</Link></li>
-                                <li><Link to='/'>Blog</Link></li>
-                                <li><Link to='/'>Contact</Link></li>
+                                <li><Link to='/shop'>Shop</Link></li>
+                                <li><Link to='/cart'>Cart</Link></li>
+                                <li><Link to='/blog'>Blog</Link></li>
+                                <li><Link to='/contact'>Contact</Link></li>
                              </ul>
                         </div>
                         <div className="col-lg-4 footer-location">

@@ -7,13 +7,14 @@ const Shop = () => {
    const [allItem, setAllItem] = useState([])
 
    useEffect(() => {
-      fetch('https://fakestoreapi.com/products')
-         .then(res => res.json())
-         .then(json => {
-            setItem(json)
-            setAllItem(json)
-         })
-   }, [])
+    const getItem = async () => {
+      const response = await fetch('https://fakestoreapi.com/products')
+      const data = await response.json()
+      setItem(data)
+      setAllItem(data)
+    }
+    getItem()
+   },[])
 
    // Filter  Data category wise 
    const getUniqueData = (category) => {
