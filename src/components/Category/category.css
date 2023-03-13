@@ -1,0 +1,34 @@
+.category-single{
+    padding: 1rem 0rem;
+    position: relative;
+    overflow: hidden;
+}
+.category-single h5{
+    position: absolute;
+    color: #252525;
+    font-weight: 700;
+    border: 5px solid #fff;
+    padding: 11px 30px;
+    border-radius: 2px;
+    font-size: 20px;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    transition: all .5s ease-in-out;
+    background: #fff;
+}
+.category-single img{
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in;
+}
+.category-single .imgBox{
+    overflow: hidden;
+}
+.category-single:hover img{
+  transform: scale(1.4);
+}
+.category-single:hover h5{
+    top: 50%;
+}

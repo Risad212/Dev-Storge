@@ -1,0 +1,35 @@
+.newsleeter {
+    height: 40vh;
+    background-color: #fcf5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.newsleeter h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.newsleeter p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.newsleeter form input{
+    padding: .5rem 15px;
+    border-radius: 0px;
+    border: none;
+    outline: none;
+}
+.newsleeter form button{
+    padding: .5rem 30px;
+    border-radius: 0px !important;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+}
+.newsleeter form button:hover{
+    background-color: var(--primary-color);
+}

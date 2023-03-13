@@ -1,0 +1,27 @@
+.addToCartProduct{
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0px;
+}
+.addToCartProduct .input button{
+    font-size: 30px;
+    border: none;
+    background: none;
+    font-weight: 500;
+}
+.addToCartProduct .input span{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+    padding: 0 5px;
+    margin: 0px 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addToCartProduct .remove-item{
+   font-size: 20px;
+   color: red;
+   cursor: pointer;
+}

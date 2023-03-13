@@ -1,0 +1,56 @@
+.singlePost {
+    background-color: #fff;
+    clear: both;
+    display: inline-block;
+    padding: 30px;
+}
+.singlePost img{
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+}
+.singlePost .b-date{
+    color: #999;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.583;
+    text-transform: uppercase;
+    transition-property: color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+.singlePost .b-date:hover{
+    color: var(--primary-color);
+}
+.singlePost .b-title{
+    color: #333;
+    font-size: 24px;
+    margin: 5px 0;
+    transition-property: color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+.singlePost .b-title:hover{
+    color: var(--primary-color);
+}
+.singlePost .b-info{
+    color: #999;
+    font-size: 11px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.singlePost .b-info span{
+    letter-spacing: .2px;
+    line-height: 1.583;
+    text-transform: capitalize;
+    display: block;
+}
+
+
+@media screen and (max-width: 992px) {
+    .singlePost img{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

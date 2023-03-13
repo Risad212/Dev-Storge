@@ -1,0 +1,26 @@
+.shop{
+    margin-top: 5rem;
+}
+.shop h2{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin: 30px 0;
+}
+.shop ul{
+    display: flex;
+    justify-content: center;
+}
+.shop ul li:hover{
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+@media screen and (max-width: 500px) {
+    .shop ul{
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        grid-gap: .5em;
+    }
+}
