@@ -15,6 +15,6 @@ a,Link{
     --primary-color: #AD0000;
 }
 /* -- backgrund style for blog page ---*/
-.BlogPage,.contatPage,.blogDetails-container{
+.BlogPage,.contatPage,.blogDetails-container,.wishlist{
     background: #f5f6f6;
 }

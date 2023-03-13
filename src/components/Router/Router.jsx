@@ -11,6 +11,7 @@ import NotFound from '../NotFound/NotFound';
 import ProductDetails from '../productDetails/ProductDetails';
 import Contact from '../../Pages/Contact';
 import BlogDetails from '../BlogDetails/BlogDetails';
+import Wishlist from '../../Pages/Wishlist';
 
 const Router = () => {
     return (
@@ -24,6 +25,7 @@ const Router = () => {
               <Route path='/blog' element={<Blog />} />
               <Route path='/blog/:title' element={<BlogDetails />} />
               <Route path='/contact' element={<Contact />} />
+              <Route path='/wishlist' element={<Wishlist />} />
               <Route path='/product/category/:catname' element={<CategoryDetails />} />
               <Route path='*' element={<NotFound />} />
            </Routes>
