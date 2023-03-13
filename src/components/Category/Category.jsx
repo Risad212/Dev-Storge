@@ -25,7 +25,6 @@ const Category = () => {
               <div className="row g-3">
                  {
                     product? product.map((elem) => {
-                       console.log(elem);
                        return (
                           <>
                            <div className="col-lg-3 col-md-6 col-sm-12" key={elem}>

@@ -18,7 +18,7 @@ const Posts = ({ posts,query }) => {
                                     </div>
                                     <div className="col-lg-7 col-md-12">
                                         <Link to="/"><span className='b-date'><i class="fa-solid fa-calendar-check pe-1"></i>{publishedAt}</span></Link>
-                                        <Link to="/"><h3 className='b-title'>{title}</h3></Link>
+                                        <Link to={'/' + title}><h3 className='b-title'>{title}</h3></Link>
                                         <div className="b-info mt-3">
                                             <span className='author'>post by: {source?.name}</span>
                                             <div className='d-flex'>
@@ -36,6 +36,7 @@ const Posts = ({ posts,query }) => {
                (
                 posts ? posts.map((elem) => {
                     const { urlToImage, publishedAt, content, title, author, source } = elem
+                    console.log(title);
                     return (
                         <>
                             <div className='singlePost mb-5'>
@@ -45,7 +46,7 @@ const Posts = ({ posts,query }) => {
                                     </div>
                                     <div className="col-lg-7 col-md-12">
                                         <Link to="/"><span className='b-date'><i class="fa-solid fa-calendar-check pe-1"></i>{publishedAt}</span></Link>
-                                        <Link to="/"><h3 className='b-title'>{title}</h3></Link>
+                                        <Link to={'/blog/' + title}><h3 className='b-title'>{title}</h3></Link>
                                         <div className="b-info mt-3">
                                             <span className='author'>post by: {source?.name}</span>
                                             <div className='d-flex'>
