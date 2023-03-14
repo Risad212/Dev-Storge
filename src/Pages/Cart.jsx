@@ -4,7 +4,8 @@ import AddToCartProduct from '../components/AddToCartProduct/AddToCartProduct';
 import CartSidebar from '../components/CartSidebar/CartSidebar';
 
 const Cart = () => {
-    const [cartCount,setCartCount] = useContext(StrogeData)
+   const {product} = useContext(StrogeData);
+   const [cartCount, setCartCount] = product
     const [pTAmount, setPTAmount] = useState()
 
     const cartTotal = (productAmount,sign,count) =>{

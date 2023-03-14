@@ -16,6 +16,7 @@
 .wishContainer td span{
     color: var(--primary-color);
     cursor: pointer;
+    font-weight: 600;
 }
 .wishContainer td i{
     cursor: pointer;

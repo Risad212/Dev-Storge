@@ -3,7 +3,8 @@ import './CartSidebar.css';
 import { StrogeData } from '../context/Context';
 
 const CartSidebar = ({ cartDetails }) => {
-  const [cartCount, setCartCount] = useContext(StrogeData)
+  const {product} = useContext(StrogeData);
+    const [cartCount, setCartCount] = product
   const [subTotal, setSubTotal] = useState(0)
   const [countValue, setCountValue] = useState(0)
 

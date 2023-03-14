@@ -3,7 +3,8 @@ import './AddToCartProuduct.css'
 import {StrogeData} from '../context/Context';
 
 const AddToCartProduct = ({ cartProduct,cartTotal }) => {
-   const [cartCount, setCartCount] = useContext(StrogeData)
+   const {product} = useContext(StrogeData);
+    const [cartCount, setCartCount] = product
    const [count, setCount] = useState(1)
    const [sign, setSign] = useState(null);
 

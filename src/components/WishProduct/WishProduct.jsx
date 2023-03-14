@@ -4,8 +4,29 @@ import { StrogeData } from '../context/Context';
 
 
 const wishProduct = () => {
-    const { wishCart, } = useContext(StrogeData)
+    const { wishCart,product } = useContext(StrogeData)
     const [wishItem, setWishItem] = wishCart
+    const [cartCount, setCartCount] = product
+
+    // add product in cart
+    const addToCart = (elem) => {
+        if(cartCount){
+          let filterData = cartCount.filter((item) => {
+              return elem.id  !== item.id
+           })
+           setCartCount([...filterData,elem])
+        }else{
+          setCartCount([...elem])
+        }
+   }
+
+    // remove Item From WishList
+    const removeItem = (id) => {
+        const filterItem = wishItem.filter((elem) => {
+             return elem.id !== id;
+        })
+        setWishItem(filterItem)
+      }
     return (
         <>
             <div className="wishContainer">
@@ -24,7 +45,6 @@ const wishProduct = () => {
                     <tbody>
                         {
                             wishItem ? wishItem.map((elem) => {
-                                console.log(elem);
                                 return (
                                     <>
                                         <tr>
@@ -32,14 +52,14 @@ const wishProduct = () => {
                                             <td><img src={elem?.image} alt="" /></td>
                                             <td>${elem?.price}</td>
                                             <td>in a stock</td>
-                                            <td><span>add to cart</span></td>
-                                            <td><i class="fa-solid fa-trash-can"></i></td>
+                                            <td><span onClick={() => addToCart(elem)}>add to cart</span></td>
+                                            <td><i class="fa-solid fa-trash-can" onClick={() => removeItem(elem?.id)}></i></td>
                                         </tr>
                                     </>
                                 )
                             })
-                                :
-                                'WishItem Not Found'
+                            :
+                            'WishItem Not Found'
                         }
                     </tbody>
                 </table>
