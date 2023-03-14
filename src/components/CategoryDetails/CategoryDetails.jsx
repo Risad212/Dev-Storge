@@ -4,12 +4,14 @@ import Product from '../Product/Product';
 
 const CategoryDetails = () => {
     let { catname } = useParams();
-    const [catProduct, setCatProduct] = useState()
+    const [catProduct, setCatProduct] = useState([])
 
     useEffect(() => {
      const getCategory = async () => {
         const response = await fetch(`https://fakestoreapi.com/products/category/${catname}`);
-        setCatProduct(response.json())
+        if(response){
+         setCatProduct(await response.clone().json())
+        }
      }
      getCategory()
     }, [catname])
