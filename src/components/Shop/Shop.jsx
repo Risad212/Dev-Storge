@@ -45,20 +45,7 @@ const Products = () => {
                 )
               })
               :
-              <>
-                <div className="col-3">
-                  <Skeleton height={350} count={3} />
-                </div>
-                <div className="col-3">
-                  <Skeleton height={350} count={3} />
-                </div>
-                <div className="col-3">
-                  <Skeleton height={350} count={3} />
-                </div>
-                <div className="col-3">
-                  <Skeleton height={350} count={3} />
-                </div>
-              </>
+              'Proudct Not Found'
           }
         </div>
       </div>

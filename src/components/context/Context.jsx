@@ -5,8 +5,9 @@ export const StrogeData = createContext()
 
 const Context = () => {
     const [cartCount, setCartCount] = useState([])
+    const [wishItem, setWishItem] = useState([])
     return (
-        <StrogeData.Provider value={[cartCount,setCartCount]}>
+        <StrogeData.Provider value={{product: [cartCount,setCartCount], wishProduct: [wishItem, setWishItem]}}>
            <Router />
         </StrogeData.Provider>
     );

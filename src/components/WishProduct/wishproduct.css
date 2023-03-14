@@ -1,0 +1,9 @@
+.wishContainer{
+    background: #fff;
+    padding: 30px;
+}
+.wishContainer .title{
+    color: #333;
+    font-size: 26px;
+    line-height: 1.269;
+}

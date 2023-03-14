@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 
 
 const Header = () => {
-  const [navStyle, setNavStyle] = useState({left: '-1000px'})
-  const [cartCount, setCartCount] = useContext(StrogeData)
+  const [navStyle, setNavStyle] = useState({left: '-1000px'}) 
+  const {product} = useContext(StrogeData);
+  const [cartCount, setCartCount] = product
   const [totalPrice, setTotalPrice] = useState(0)
+ 
   useEffect(() => {
     const countTotal = Object.entries(cartCount).reduce(function (total, pair) {
       const [key, value] = pair;
@@ -29,6 +31,7 @@ const Header = () => {
             <li><Link to='shop'>Shop</Link></li>
             <li><Link to='/cart'>Cart</Link></li>
             <li><Link to='/blog'>Blog</Link></li>
+            <li><Link to='/wishlist'>Wishlist</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
           </ul>
           <div className='position-relative'>

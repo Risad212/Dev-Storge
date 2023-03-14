@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { StrogeData } from '../context/Context';
 import './Product.css';
 
 const Product = ({ item}) => {
     let location = useLocation();
-    const [cartCount, setCartCount] = useContext(StrogeData)
+    const [saved,setSaved] = useState('fa-regular')
+    const {product,wishProduct} = useContext(StrogeData);
+    const [cartCount, setCartCount] = product
+    const [wishItem, setWishItem] = wishProduct
+
+    // set product in cart
     const addToCart = () => {
           if(cartCount){
             let filterData = cartCount.filter((elem) => {
@@ -15,6 +20,12 @@ const Product = ({ item}) => {
           }else{
             setCartCount([...item])
           }
+    }
+
+    // set product in wishlist
+    const setWishProduct = () => {
+        setWishItem([...wishItem,item])
+        setSaved('fa-solid')
     }
     return (
         <>
@@ -28,6 +39,9 @@ const Product = ({ item}) => {
                         <h5 class="card-title fw-bold">{item?.title.substring(0, 12)}</h5>
                         <p class="card-text lead fw-bold">${item?.price}</p>
                         <button class="btn btn-outline-dark px-4" onClick={() => addToCart()}>Add To Cart</button>
+                        <button class="btn btn-outline-dark px-2" onClick={() => setWishProduct()}>
+                           <i class={`${saved} fa-heart`}></i>
+                        </button>
                     </div>
                 </div>
             </div>
