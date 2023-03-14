@@ -2,12 +2,22 @@
     background: #fff;
     padding: 30px;
 }
-.wishContainer .title{
-    color: #333;
-    font-size: 26px;
-    line-height: 1.269;
+.wishContainer table{
+    margin-top: 30px;
 }
-.wishContainer table thead th{
-    font-size: 16px;
-    text-transform: capitalize;
+.wishContainer td img{
+    width: 100px;
+    height: 100px;
+}
+.wishContainer td{
+    vertical-align: middle;
+    padding: 12px;
+}
+.wishContainer td span{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.wishContainer td i{
+    cursor: pointer;
+    color: red;
 }

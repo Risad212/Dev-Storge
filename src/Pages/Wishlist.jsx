@@ -1,11 +1,7 @@
-import React, { useContext } from 'react';
-import { StrogeData } from  '../components/context/Context';
-import WishProduct from '../components/wishProduct/wishProduct';
+import React from 'react';
+import WishProduct from '../components/WishProduct/WishProduct'
 
 const Wishlist = () => {
-    const {wishProduct,} = useContext(StrogeData)
-    const [wishItem, setWishItem] = wishProduct
-
     return (
         <div className='wishlist'>
            <div className="container">

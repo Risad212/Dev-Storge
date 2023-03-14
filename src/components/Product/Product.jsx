@@ -6,9 +6,9 @@ import './Product.css';
 const Product = ({ item}) => {
     let location = useLocation();
     const [saved,setSaved] = useState('fa-regular')
-    const {product,wishProduct} = useContext(StrogeData);
+    const {product,wishCart} = useContext(StrogeData);
     const [cartCount, setCartCount] = product
-    const [wishItem, setWishItem] = wishProduct
+    const [wishItem, setWishItem] = wishCart
 
     // set product in cart
     const addToCart = () => {
@@ -24,8 +24,15 @@ const Product = ({ item}) => {
 
     // set product in wishlist
     const setWishProduct = () => {
-        setWishItem([...wishItem,item])
-        setSaved('fa-solid')
+        if(wishItem){
+            let filterWish = wishItem.filter((elem) => {
+                return elem?.id !== item?.id
+            })
+            setWishItem([...filterWish,item])
+            setSaved('fa-solid')
+        }else{
+            setWishItem([...item])
+        }
     }
     return (
         <>
