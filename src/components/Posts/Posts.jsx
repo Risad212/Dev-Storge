@@ -35,7 +35,6 @@ const Posts = ({ posts,query }) => {
                (
                 posts ? posts.map((elem) => {
                     const { urlToImage, publishedAt, content, title, author, source } = elem
-                    console.log(title);
                     return (
                         <>
                             <div className='singlePost mb-5'>
