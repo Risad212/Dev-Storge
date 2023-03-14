@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Product from '../Product/Product';
@@ -5,12 +6,15 @@ import Product from '../Product/Product';
 const CategoryDetails = () => {
     let { catname } = useParams();
     const [catProduct, setCatProduct] = useState([])
-
+    const [isLoading,setIsLoading] = useState(false)
     useEffect(() => {
      const getCategory = async () => {
-        const response = await fetch(`https://fakestoreapi.com/products/category/${catname}`);
-        if(response){
-         setCatProduct(await response.clone().json())
+       setIsLoading(true)
+        try{
+           const response = await axios.get(`https://fakestoreapi.com/products/category/${catname}`);
+           setCatProduct(response?.data)
+        }catch{
+         setIsLoading(false)
         }
      }
      getCategory()

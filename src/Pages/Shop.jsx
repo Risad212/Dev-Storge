@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ProductFilter from '../components/ProductFilter/ProductFilter';
 import ShopProduct from '../components/ShopProduct/ShopProduct';
@@ -5,13 +6,19 @@ import ShopProduct from '../components/ShopProduct/ShopProduct';
 const Shop = () => {
    const [item, setItem] = useState([])
    const [allItem, setAllItem] = useState([])
+   const [isLoading,setIsLoading] = useState(false)
 
    useEffect(() => {
     const getItem = async () => {
-      const response = await fetch('https://fakestoreapi.com/products')
-      const data = await response.json()
-      setItem(data)
-      setAllItem(data)
+       setIsLoading(true)
+       try{
+         const response = await axios.get('https://fakestoreapi.com/products');
+         setItem(response.data)
+         setAllItem(response.data)
+       }
+       catch{
+         setIsLoading(false)
+       }
     }
     getItem()
    },[])

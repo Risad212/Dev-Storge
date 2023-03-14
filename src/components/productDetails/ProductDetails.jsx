@@ -3,21 +3,29 @@ import { useParams } from 'react-router-dom';
 import './ProductDetails.css';
 import Rating from '../rating/Rating';
 import { StrogeData } from '../context/Context';
+import axios from 'axios';
 
 const ProductDetails = () => {
-    const {product,wishCart} = useContext(StrogeData);
+    const {product} = useContext(StrogeData);
     const [cartCount, setCartCount] = product
     const { id } = useParams()
     const [item, setItem] = useState({})
-
+    const [isLoading,setIsLoading] = useState(false);
+    
     useEffect(() => {
       const getProduct = async () => {
-        const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-        const data = await response.json()
-        setItem(data)
+        setIsLoading(true)
+        try{
+            const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
+            setItem(response?.data)
+        }
+        catch{
+            setIsLoading(false)
+        }
       }
       getProduct()
     }, [id])
+
     const addToCart = () => {
         if (cartCount) {
             let filterData = cartCount.filter((elem) => {

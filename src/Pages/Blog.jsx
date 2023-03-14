@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import BlogSidebar from '../components/BlogSIdebar/BlogSidebar';
 import Pagination from '../components/pagination/Pagination';
@@ -8,12 +9,16 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(10)
   const [queryPost,setQueryPost] = useState()
+  const [isLoading,setIsLoading] = useState(false)
 
   useEffect(() => {
     const getBlog = async () => {
-      const response = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2023-03-09&to=2023-03-09&sortBy=popularity&apiKey=${import.meta.env.VITE_API_KEY}`)
-      if (response) {
-        setSBlog(await response.json())
+      setIsLoading(true)
+      try{
+        const response = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2023-03-09&to=2023-03-09&sortBy=popularity&apiKey=${import.meta.env.VITE_API_KEY}`);
+        setSBlog(response?.data)
+      }catch{
+        setIsLoading(false)
       }
     }
     getBlog()

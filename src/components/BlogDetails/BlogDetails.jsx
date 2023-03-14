@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './blogdetails.css';
@@ -5,16 +6,21 @@ import './blogdetails.css';
 const BlogDetails = () => {
     const [targetBlog, setTargetBlog] = useState()
     const { title } = useParams()
+    const [isLoading,setIsLoading] = useState(false);
+
     useEffect(() => {
         const getBlog = async () => {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2023-03-09&to=2023-03-09&sortBy=popularity&apiKey=${import.meta.env.VITE_API_KEY}`)
+            setIsLoading(true)
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2023-03-09&to=2023-03-09&sortBy=popularity&apiKey=${import.meta.env.VITE_API_KEY}`)
             if (response) {
-                let blogs = await response.json()
+                let blogs = response.data;
                 let filterBlog = blogs?.articles.filter((blog) => {
                     return blog.title == title
                 })
 
                 setTargetBlog(filterBlog)
+            }else{
+                setIsLoading(false)
             }
         }
         getBlog()
