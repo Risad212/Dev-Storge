@@ -14,17 +14,7 @@ const ShopProduct = ({ allProduct }) => {
                         )
                     })
                     :
-                    <div>
-                        <div className="col-4">
-                            <Skeleton height={350} count={3} />
-                        </div>
-                        <div className="col-4">
-                            <Skeleton height={350} count={3} />
-                        </div>
-                        <div className="col-4">
-                            <Skeleton height={350} count={3} />
-                        </div>
-                    </div>
+                    'shop not found'
             }
         </>
     );
