@@ -98,9 +98,6 @@
     .navbar .menu .navbar-list li{
         margin-bottom: 30px;
     }
-    .shoping-icon{
-        right: -25px;
-    }
     .remove-bar,.menu-bar{
         display: block;
     }
@@ -109,5 +106,17 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+    .navBtn{
+        display: block;
+        margin-bottom: 25px;
+    }
+    .shoping-icon{
+        right: -27px;
+        top: 50px;
+    }
+    .wishList-icon{
+        left: 14px;
+        top: 50px;
     }
 }

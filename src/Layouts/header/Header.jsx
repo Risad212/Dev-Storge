@@ -36,7 +36,7 @@ const Header = () => {
             <li><Link to='/contact'>Contact</Link></li>
           </ul>
           <div className='position-relative'>
-            <button className='btn btn-outline-dark me-2'>My Account</button>
+            <button className='btn btn-outline-dark me-2 navBtn'>My Account</button>
             <Link to="/wishlist"><i class="fa-sharp fa-regular fa-heart me-4 ms-1"></i></Link>
              <span className='wishList-icon'>{wishItem?.length}</span>
              <span className='pe-1 ps-1 fw-bold'>${cartCount ? totalPrice : 0.00}</span>
