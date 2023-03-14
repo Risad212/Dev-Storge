@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [navStyle, setNavStyle] = useState({left: '-1000px'}) 
-  const {product} = useContext(StrogeData);
+  const {product,wishCart} = useContext(StrogeData);
   const [cartCount, setCartCount] = product
+  const [wishItem, setWishItem] = wishCart
   const [totalPrice, setTotalPrice] = useState(0)
  
   useEffect(() => {
@@ -36,7 +37,9 @@ const Header = () => {
           </ul>
           <div className='position-relative'>
             <button className='btn btn-outline-dark me-2'>My Account</button>
-            <span className='pe-1 ps-1 fw-bold'>${cartCount ? totalPrice : 0.00}</span>
+            <Link to="/wishlist"><i class="fa-sharp fa-regular fa-heart me-4 ms-1"></i></Link>
+             <span className='wishList-icon'>{wishItem?.length}</span>
+             <span className='pe-1 ps-1 fw-bold'>${cartCount ? totalPrice : 0.00}</span>
             <Link to="/cart"><i class="fa-solid fa-cart-shopping"></i></Link>
             <span className='shoping-icon'>{cartCount?.length}</span>
           </div>

@@ -31,11 +31,26 @@
     font-weight: 500;
 }
 
-.shoping-icon {
+.shoping-icon{
     position: absolute;
     width: 2rem;
     height: 2rem;
-    right: -28px;
+    right: -25px;
+    top: -12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wishList-icon{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: 130px;
     top: -12px;
     border-radius: 50%;
     background: var(--primary-color);
